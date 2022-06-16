@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GithubProject</string>
+    <string name="title">Title :</string>
+    <string name="created_at">Created Date :</string>
+    <string name="closed_at">Closed Date :</string>
+    <string name="user_name">UserName :</string>
+</resources>
