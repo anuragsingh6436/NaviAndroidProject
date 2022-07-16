@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.githubproject.R
-import com.example.githubproject.dataModel.MainActivityItemDataModel
 import com.example.githubproject.databinding.ActivityMainItemBinding
+import com.example.githubproject.model.response.ClosedPullRequestList
 
 class MainAdapter : RecyclerView.Adapter<MainViewHolder>() {
 
-    private val itemsList = ArrayList<MainActivityItemDataModel>()
+    private val itemsList = ArrayList<ClosedPullRequestList>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -28,7 +28,7 @@ class MainAdapter : RecyclerView.Adapter<MainViewHolder>() {
         return itemsList.size
     }
 
-    fun setItems(list: ArrayList<MainActivityItemDataModel>) {
+    fun setItems(list: ArrayList<ClosedPullRequestList>) {
         itemsList.addAll(list)
         notifyDataSetChanged()
     }
@@ -37,9 +37,9 @@ class MainAdapter : RecyclerView.Adapter<MainViewHolder>() {
 class MainViewHolder(itemview: View, val dataBinding: ActivityMainItemBinding) :
     RecyclerView.ViewHolder(itemview) {
 
-    fun onBindData(item: MainActivityItemDataModel, position: Int) {
+    fun onBindData(item: ClosedPullRequestList, position: Int) {
         with(dataBinding) {
-            viewModel = item
+            data = item
             executePendingBindings()
         }
     }

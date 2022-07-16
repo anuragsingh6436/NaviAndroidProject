@@ -5,7 +5,8 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.githubproject.adapter.MainAdapter
-import com.example.githubproject.dataModel.MainActivityItemDataModel
+import com.example.githubproject.adapter.VerticalItemDecorator
+import com.example.githubproject.model.response.ClosedPullRequestList
 import com.squareup.picasso.Picasso
 
 @BindingAdapter(value = ["imageUrl"], requireAll = false)
@@ -21,7 +22,7 @@ fun getImage(view: AppCompatImageView, imageUrl: String) {
 fun updateRecyclerView(
     recyclerView: RecyclerView,
     adapter: MainAdapter,
-    itemsList: ArrayList<MainActivityItemDataModel>
+    itemsList: ArrayList<ClosedPullRequestList>
 ) {
     if (recyclerView.adapter == null) recyclerView.adapter = adapter
     if (itemsList.isNotEmpty()) {
@@ -32,4 +33,14 @@ fun updateRecyclerView(
 @BindingAdapter(value = ["visibleGoneByText"], requireAll = true)
 fun toggleViewByText(view: View, text: String?) {
     if (text.isNullOrEmpty()) View.GONE else View.VISIBLE
+}
+
+@BindingAdapter(value = ["visibleGone"], requireAll = true)
+fun toggleView(view: View, visible: Boolean) {
+    view.visibility = if (visible) View.VISIBLE else View.GONE
+}
+
+@BindingAdapter(value = ["addItemDecorator"], requireAll = true)
+fun addItemDecorator(recyclerView: RecyclerView, verticalHeight: Int) {
+    recyclerView.addItemDecoration(VerticalItemDecorator(verticalHeight))
 }

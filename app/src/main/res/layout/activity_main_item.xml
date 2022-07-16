@@ -13,44 +13,48 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:text="@string/title"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/user_image"
+            app:layout_constraintTop_toTopOf="@id/user_image" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="@{viewModel.data.title}"
+            android:text="@{data.title}"
             android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/title"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user_image"
             tools:text="title" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/created_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="@string/created_at"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/user_image"
             app:layout_constraintTop_toBottomOf="@id/title_text" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/created_date_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:text="@{viewModel.data.created_at}"
+            android:text="@{data.created_at}"
             android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/created_date"
             app:layout_constraintTop_toBottomOf="@id/title_text"
             tools:text="created_at" />
@@ -59,23 +63,25 @@
             android:id="@+id/closed_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="@string/closed_at"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/user_image"
             app:layout_constraintTop_toBottomOf="@id/created_date_text"
             tools:text="created_at" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/closed_date_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:text="@{viewModel.data.closed_at}"
+            android:text="@{data.closed_at}"
             android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/closed_date"
             app:layout_constraintTop_toBottomOf="@id/created_date_text"
             tools:text="created_at" />
@@ -84,36 +90,37 @@
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="@string/user_name"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/user_image"
             app:layout_constraintTop_toBottomOf="@id/closed_date_text"
-            tools:text="created_at" />
+            tools:text="User_name" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/user_name_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:text="@{viewModel.data.user.login}"
+            android:text="@{data.user.login}"
             android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/user_name"
             app:layout_constraintTop_toBottomOf="@id/closed_date_text"
             tools:text="created_at" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/user_image"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginTop="10dp"
-            app:imageUrl="@{viewModel.data.user.avatar_url}"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:imageUrl="@{data.user.avatar_url}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/user_name" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -121,7 +128,7 @@
     <data>
 
         <variable
-            name="viewModel"
-            type="com.example.githubproject.dataModel.MainActivityItemDataModel" />
+            name="data"
+            type="com.example.githubproject.model.response.ClosedPullRequestList" />
     </data>
 </layout>
