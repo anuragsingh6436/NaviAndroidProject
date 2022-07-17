@@ -47,6 +47,6 @@
 
         <variable
             name="viewModel"
-            type="com.example.githubproject.viewModel.MainActivityViewModel" />
+            type="com.example.githubproject.viewModel.GitHubProjectFragmentViewModel" />
     </data>
 </layout>

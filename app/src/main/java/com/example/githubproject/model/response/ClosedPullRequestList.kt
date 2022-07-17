@@ -1,5 +1,8 @@
 package com.example.githubproject.model.response
 
+import com.example.githubproject.adapter.RecyclerViewItemTypes
+import com.example.githubproject.base.BaseRecyclerItem
+
 data class ClosedPullRequestList(
     val url: String,
     val id: Int,
@@ -9,4 +12,10 @@ data class ClosedPullRequestList(
     val updated_at: String,
     val closed_at: String,
     val merged_at: String
-)
+) : BaseRecyclerItem {
+
+    override fun getItemtype(): Int {
+        return RecyclerViewItemTypes.GIT_HUB_ITEM_TYPE
+    }
+
+}

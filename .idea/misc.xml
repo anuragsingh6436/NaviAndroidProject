@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1288968824940048" />
         <entry key="app/src/main/res/drawable/white_background.xml" value="0.1805" />
+        <entry key="app/src/main/res/layout/activity_git_hub_project.xml" value="0.1203125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1578125" />
         <entry key="app/src/main/res/layout/activity_main_item.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_git_hub_project.xml" value="0.3453125" />
+        <entry key="app/src/main/res/layout/fragment_git_hub_project_item.xml" value="0.18229166666666666" />
+        <entry key="app/src/main/res/layout/loading_item.xml" value="0.18125" />
         <entry key="app/src/main/res/xml/network_security_config.xml" value="0.12760416666666666" />
       </map>
     </option>

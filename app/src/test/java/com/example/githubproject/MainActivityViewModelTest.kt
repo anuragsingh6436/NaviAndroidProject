@@ -2,8 +2,8 @@ package com.example.githubproject
 
 import com.example.githubproject.event.ActivityConstants
 import com.example.githubproject.event.ActivityConstants.USER_REPO
-import com.example.githubproject.repository.MainActivityRepository
-import com.example.githubproject.viewModel.MainActivityViewModel
+import com.example.githubproject.repository.GitHubProjectRepository
+import com.example.githubproject.viewModel.GitHubProjectViewModel
 import io.mockk.MockKAnnotations
 import io.mockk.mockk
 import io.mockk.unmockkAll
@@ -17,8 +17,8 @@ import org.junit.jupiter.api.extension.ExtendWith
 @ExtendWith(InstantExecutorExtension::class)
 class MainActivityViewModelTest {
 
-    val repository = mockk<MainActivityRepository>()
-    val mainActivityViewModel = MainActivityViewModel(repository)
+    val repository = mockk<GitHubProjectRepository>()
+    val mainActivityViewModel = GitHubProjectViewModel(repository)
 
     @BeforeEach
     fun setUp() {

@@ -4,8 +4,9 @@ import android.view.View
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.githubproject.adapter.MainAdapter
+import com.example.githubproject.adapter.GitHubProjectAdapter
 import com.example.githubproject.adapter.VerticalItemDecorator
+import com.example.githubproject.base.BaseRecyclerItem
 import com.example.githubproject.model.response.ClosedPullRequestList
 import com.squareup.picasso.Picasso
 
@@ -21,8 +22,8 @@ fun getImage(view: AppCompatImageView, imageUrl: String) {
 @BindingAdapter(value = ["adapter", "itemsList"], requireAll = true)
 fun updateRecyclerView(
     recyclerView: RecyclerView,
-    adapter: MainAdapter,
-    itemsList: ArrayList<ClosedPullRequestList>
+    adapter: GitHubProjectAdapter,
+    itemsList: ArrayList<BaseRecyclerItem>
 ) {
     if (recyclerView.adapter == null) recyclerView.adapter = adapter
     if (itemsList.isNotEmpty()) {
