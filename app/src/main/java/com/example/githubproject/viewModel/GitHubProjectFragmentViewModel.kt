@@ -52,7 +52,7 @@ class GitHubProjectFragmentViewModel @Inject constructor(val repository: GitHubP
     }
 
     fun getUrl(): String {
-        return "${ActivityConstants.USER_NAME}/${ActivityConstants.USER_REPO}/pulls?state=closed&page=2"
+        return "${ActivityConstants.USER_NAME}/${ActivityConstants.USER_REPO}/pulls?state=closed"
     }
 
     fun retryButtonClick() {
